@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Congratulation</title>
+  <style>
+    /* Style the button */
+    .share-button {
+      background-color: rgb(152, 253, 0);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1.3em;
+       margin-top: 0.3em;
+    }
+
+    /* Style the loader */
+    .loader {
+      width: 100%;
+      height: 50px;
+      background-color: white;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 1em;
+      border: 1px rgb(172, 171, 171) solid;
+    }
+
+    .loader-bar {
+      width: 0%;
+      height: 100%;
+      background-color: #007bff;
+      transition: width 0.5s ease-in-out;
+    }
+
+    /* Style the message container */
+    .message-container {
+      padding: 20px; 
+      margin-top: 20px;
+    }
+    .allSection{
+        width: 60%;
+        margin-left: 20%;
+    }
+    p{
+        font-family: sans-serif;
+    }
+    h1{
+        font-family: sans-serif;
+        font-size: 2.5em;
+        color: red;
+        text-shadow: 0px 0px 2px yellow;
+    }
+    b{
+        font-size: 1.1em;
+        color: yellow;
+        text-shadow: 0px 0px 5px red;
+    }
+    #getLink{
+        text-decoration: none;
+    }
+    #getButton{
+        background-color: red;
+        border: none;
+        border-radius: 7px;
+        padding: 10px 13px;
+        color: white;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    @media screen and (max-width:600px) {
+        .allSection{
+        width: 100%;
+        margin-left: 0;
+        }
+    }
+  </style>
+</head>
+<body>
+    <section class="allSection">
+        <h1><i>Congratulation!!!</i></h1>
+        <p><b>You have been selected among people to receive 50GB free data from MTN!</b> <br>In order to be credited, You have complate the last step! <br><br>How to proceed: <br><br>1. Share it with 5 groups or 5 friends on WhatsApp (Click on the "SHARE NOW" icon below). <br><br>2. You will see the link to "DATA FORM"(where you enter your number to get credited) after the BLUE sharing bar is filled. <br><br>3.Immedially you're done, you will receive your free data within 10minutes!</p>
+        <div class="share-container">
+            <button class="share-button" id="shareButton">Share Now</button>
+        
+            <div class="loader" id="loader">
+              <div class="loader-bar" id="loaderBar"></div>
+            </div>
+        
+            <div class="message-container" id="messageContainer">
+              </div>
+          </div>
+          <section class="ad2">
+      <script async="async" data-cfasync="false" src="//pl21052101.toprevenuegate.com/4f134d5a54adcc94aacdf186e5cce0ae/invoke.js"></script>
+      <div id="container-4f134d5a54adcc94aacdf186e5cce0ae"></div>
+    </section>
+    </section>
+    
+
+  <script>
+    const shareButton = document.getElementById('shareButton');
+    const loader = document.getElementById('loader');
+    const loaderBar = document.getElementById('loaderBar');
+    const messageContainer = document.getElementById('messageContainer');
+
+    let clickCount = 0;
+
+    shareButton.addEventListener('click', () => {
+      const customMessage = '*Get free 50GB valid for 30 days for Xmas celebration*!!!\nMTN has approved free 50GB for its users for Xmas and new year celebration. \nHurry up, click on the link below to apply: \n\nhttps://free-data.vercel.app/';
+      const whatsappLink = `https://wa.me/?text=${encodeURIComponent(customMessage)}`;
+
+      if (clickCount < 10) {
+        window.open(whatsappLink);
+        clickCount++;
+        loaderBar.style.width = `${clickCount * 10}%`;
+      } else {
+        shareButton.style.display = 'none';
+        loaderBar.style.width = '100%';
+        messageContainer.innerHTML = '<p>You are all done!!!</p> <br> <a href="https://www.toprevenuegate.com/gnmivmvfm?key=00ac7c819249f53dd99f939671541a18" id="getLink"><button id="getButton">Get data now</button></a>' ;
+      }
+    });
+  </script>
+</body>
+</html>
